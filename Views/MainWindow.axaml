@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GraphsManager.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:components="using:GraphsManager.Views.ViewComponents"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GraphsManager.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="GraphsManager">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Grid ShowGridLines="True" RowDefinitions="*, 3*, *">
+        <Grid Grid.Row="1" ColumnDefinitions="5*, *">
+            <components:GraphEditor Name="Editor" Theme="Light"/>
+            <ListBox Grid.Column="1" Items="{Binding States}" SelectionChanged="SelectingItemsControl_OnSelectionChanged"/>
+        </Grid>
+    </Grid>
+
+    
+    
+
+</Window>
