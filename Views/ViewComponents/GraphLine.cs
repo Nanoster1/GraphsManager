@@ -6,7 +6,7 @@ using Avalonia.Input;
 
 namespace GraphsManager.Views.ViewComponents;
 
-public class GraphLine: Polyline
+public class GraphLine: Line
 {
     private bool _activated;
     public GraphLine()
@@ -16,7 +16,6 @@ public class GraphLine: Polyline
         PointerEnter += OnPointerEnter;
         PointerLeave += OnPointerLeave;
         ZIndex = 0;
-        Points = new List<Point>(3);
     }
     
     public void Activate()
@@ -50,6 +49,4 @@ public class GraphLine: Polyline
     public new string Name { get; set; }
     public string FirstPointName { get; set; }
     public string SecondPointName { get; set; }
-    public Point StartPoint { get => Points[0]; set => Points[0] = value; }
-    public Point EndPoint { get => Points[^1]; set => Points[^1] = value; }
 }
